@@ -20,39 +20,39 @@
         .u-header {
             top: 0 !important;
         }
-        /* Первый блок: на широких экранах текст 35%, картинка 65% */
+        /* Первый блок: на широких экранах текст 35%, картинка 15% и заканчивается на середине экрана */
         @media (min-width: 1200px) {
-    /* Герой: текст 35%, картинка заканчивается на середине экрана */
-    .hero-wide .u-layout-wrap-1 > .u-layout > .u-layout-row {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-    }
-    .hero-wide .u-layout-cell:first-child {
-        width: 35% !important;
-        min-width: 35% !important;
-    }
-    .hero-wide .u-layout-cell:last-child {
-        width: 15% !important; /* 50% - 35% = 15% — чтобы правый край был на середине */
-        min-width: 15% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    .hero-wide .u-layout-cell:last-child .u-image-1 {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        min-height: 400px; /* при необходимости — высота картинки */
-        background-size: contain !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-    }
-}
+            .hero-wide .u-layout-wrap-1 > .u-layout > .u-layout-row {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+            }
+            .hero-wide .u-layout-cell:first-child {
+                width: 35% !important;
+                min-width: 35% !important;
+            }
+            .hero-wide .u-layout-cell:last-child {
+                width: 15% !important;
+                min-width: 15% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            .hero-wide .u-layout-cell:last-child .u-image-1 {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                min-height: 400px;
+                background-size: contain !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+            }
+        }
         /* Запрет увеличения картинки в первом блоке */
         .hero-wide .u-image {
             pointer-events: none;
             cursor: default;
         }
+
         /* Блок "Как устроен ноготь?" — центрирование и ограничение ширины */
         .nail-center {
             max-width: 1200px;
@@ -61,48 +61,45 @@
             padding: 0 20px;
         }
         /* На смартфонах колонки внутри блока "Как устроен ноготь?" становятся шире */
-      /* Мобильная адаптация блока "Как устроен ноготь?" */
-@media (max-width: 767px) {
-    .nail-center {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding: 0 15px !important; /* как в стандартных .u-sheet */
-        box-sizing: border-box;
-    }
-    .nail-center .u-layout-row {
-        flex-direction: column !important;
-        width: 100% !important;
-    }
-    .nail-center .u-layout-cell,
-    .nail-center .u-layout-cell-2,
-    .nail-center .u-layout-cell-3 {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 20px;
-        box-sizing: border-box;
-    }
-    /* Картинка на всю ширину */
-    .nail-center .u-image-1 {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        min-height: 200px;
-        background-size: cover !important;
-        background-position: center !important;
-    }
-    /* Списки и текст тоже на всю ширину */
-    .nail-center .u-text-3,
-    .nail-center .u-text-5,
-    .nail-center ul {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        box-sizing: border-box;
-    }
-}
+        @media (max-width: 767px) {
+            .nail-center {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 15px !important;
+                box-sizing: border-box;
+            }
+            .nail-center .u-layout-row {
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+            .nail-center .u-layout-cell,
+            .nail-center .u-layout-cell-2,
+            .nail-center .u-layout-cell-3 {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-bottom: 20px;
+                box-sizing: border-box;
+            }
+            .nail-center .u-image-1 {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                min-height: 200px;
+                background-size: cover !important;
+                background-position: center !important;
+            }
+            .nail-center .u-text-3,
+            .nail-center .u-text-5,
+            .nail-center ul {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+                box-sizing: border-box;
+            }
+        }
         /* Увеличиваем ширину колонки "Состав ногтя" на десктопе, чтобы текст не переносился */
         @media (min-width: 992px) {
             .nail-center .u-layout-cell-3 {
@@ -248,7 +245,7 @@
                         <a href="#block-5" class="u-active-custom-color-1 u-align-left u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-gradient u-hover-custom-color-1 u-none u-radius u-text-active-white u-text-hover-white u-btn-1">НАЧАТЬ ИЗУЧЕНИЕ</a>
                     </div>
                 </div>
-                <div class="u-container-align-center u-container-style u-image u-layout-cell u-size-23-xs u-size-30-md u-size-30-sm u-size-32-lg u-size-32-xl u-image-1" data-image-width="802" data-image-height="1280">
+                <div class="u-container-align-center u-container-style u-image u-layout-cell u-size-23-xs u-size-30-md u-size-30-sm u-size-32-lg u-size-32-xl u-image-1 hero-image-clickable" data-image-width="802" data-image-height="1280">
                     <div class="u-container-layout u-valign-bottom u-container-layout-2"></div>
                 </div>
             </div>
@@ -555,6 +552,19 @@
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
     });
+
+    // Добавляем hover-эффект для картинки в первом блоке
+    const heroImageDiv = document.querySelector('.hero-image-clickable');
+    if (heroImageDiv) {
+        heroImageDiv.style.cursor = 'pointer';
+        heroImageDiv.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+        heroImageDiv.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    }
     
     // Плавная прокрутка для якорей
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
