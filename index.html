@@ -13,7 +13,7 @@
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700">
     <style>
         /* ========== ТОЛЬКО ДОБАВЛЕННЫЕ СТИЛИ (НЕ ЛОМАЮТ ОРИГИНАЛ) ========== */
-        /* Отступ для sticky-меню */
+        /* Отступ для sticky-меню, чтобы не перекрывало первый блок */
         body {
             padding-top: 70px;
         }
@@ -21,28 +21,64 @@
             top: 0 !important;
         }
         
-        /* 1. ПЕРВЫЙ БЛОК: на широких экранах (>1200px) текст 35%, картинка 65% */
-        @media (min-width: 1200px) {
-            .hero-wide .u-layout-cell:first-child {
-                width: 35% !important;
-            }
-            .hero-wide .u-layout-cell:last-child {
-                width: 65% !important;
+        /* 1. ПЕРВЫЙ БЛОК: на десктопе (шире 992px) ровно 50% на 50% */
+        @media (min-width: 992px) {
+            .hero-50-50 .u-layout-cell:first-child,
+            .hero-50-50 .u-layout-cell:last-child {
+                width: 50% !important;
             }
         }
+        /* Запрет увеличения картинки в первом блоке */
+        .hero-50-50 .u-image {
+            pointer-events: none;
+            cursor: default;
+        }
         
-        /* 2. БЛОК "Как устроен ноготь?" — на смартфонах колонки во всю ширину */
+        /* 2. БЛОК "Как устроен ноготь?" — на смартфонах колонки во всю ширину, на остальных — как в оригинале */
         @media (max-width: 767px) {
-            .nail-fix .u-layout-row {
+            .nail-fix-mobile .u-layout-row {
                 flex-direction: column !important;
             }
-            .nail-fix .u-layout-cell {
+            .nail-fix-mobile .u-layout-cell {
                 width: 100% !important;
                 margin-bottom: 20px;
             }
         }
         
-        /* Анимации при наведении (как вы просили ранее) */
+        /* Изображение в блоке "Как устроен ноготь?" — кликабельно для увеличения */
+        .nail-clickable {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .nail-clickable:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Модальное окно для увеличения изображения */
+        .modal-img {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-img img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .modal-img.show {
+            display: flex;
+        }
+        
+        /* Анимации при наведении */
         .u-btn-1, .u-btn {
             transition: transform 0.25s ease, box-shadow 0.25s ease !important;
         }
@@ -130,8 +166,8 @@
     </div>
 </header>
 
-<!-- ПЕРВЫЙ БЛОК: добавлен класс hero-wide -->
-<section class="u-clearfix u-custom-color-4 u-lightbox u-section-1 fade-up hero-wide" id="block-2">
+<!-- ПЕРВЫЙ БЛОК: класс hero-50-50 для 50/50 на десктопе -->
+<section class="u-clearfix u-custom-color-4 u-lightbox u-section-1 fade-up hero-50-50" id="block-2">
     <div class="data-layout-selected u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-layout-custom-sm u-layout-custom-xs u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
             <div class="u-layout-row">
@@ -176,16 +212,16 @@
     </div>
 </section>
 
-<!-- БЛОК "Как устроен ноготь?" с классом nail-fix для мобильной адаптации -->
+<!-- БЛОК "Как устроен ноготь?" с классом nail-fix-mobile только для мобильной адаптации -->
 <section class="u-clearfix u-custom-color-4 u-valign-bottom-sm u-valign-middle-xl u-section-4 zoom-in" id="block-6">
-    <div class="nail-fix">
+    <div class="nail-fix-mobile">
         <h1 class="u-align-center u-text u-text-1"><b>Как устроен ноготь?</b></h1>
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-20 u-layout-wrap u-layout-wrap-1">
             <div class="u-layout">
                 <div class="u-layout-col">
                     <div class="u-size-30">
                         <div class="u-layout-row">
-                            <div class="u-container-style u-image u-image-round u-layout-cell u-radius u-shape-rectangle u-size-60 u-image-1" data-image-width="1024" data-image-height="576">
+                            <div class="u-container-style u-image u-image-round u-layout-cell u-radius u-shape-rectangle u-size-60 u-image-1 nail-clickable" data-image-width="1024" data-image-height="576" id="nailImage">
                                 <div class="u-container-layout u-container-layout-1"></div>
                             </div>
                         </div>
@@ -404,6 +440,11 @@
     </div>
 </footer>
 
+<!-- Модальное окно для увеличения изображения -->
+<div id="imageModal" class="modal-img" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Увеличенное изображение">
+</div>
+
 <script>
     // Анимация появления при скролле
     const animatedElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');
@@ -418,6 +459,32 @@
     window.addEventListener('scroll', checkVisibility);
     window.addEventListener('load', checkVisibility);
     setTimeout(checkVisibility, 300);
+
+    // Увеличение изображения в блоке "Как устроен ноготь?" по клику
+    const nailImageDiv = document.getElementById('nailImage');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    
+    if (nailImageDiv) {
+        const bgImage = window.getComputedStyle(nailImageDiv).backgroundImage;
+        const urlMatch = bgImage.match(/url\(["']?([^"')]+)["']?\)/);
+        if (urlMatch && urlMatch[1]) {
+            nailImageDiv.style.cursor = 'pointer';
+            nailImageDiv.addEventListener('click', function(e) {
+                e.stopPropagation();
+                modalImg.src = urlMatch[1];
+                modal.classList.add('show');
+            });
+        }
+    }
+    
+    function closeModal() {
+        modal.classList.remove('show');
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+    });
     
     // Плавная прокрутка для якорей
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
