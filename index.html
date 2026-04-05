@@ -12,170 +12,174 @@
     <meta name="generator" content="Nicepage 8.4.0, nicepage.com">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700">
     <style>
-        /* ========== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ (НЕ ЛОМАЮТ ОРИГИНАЛ) ========== */
-        /* Отступ для sticky-меню */
-        body {
-            padding-top: 70px;
+    /* ========== ГЛОБАЛЬНЫЕ ФИКСЫ =========== */
+    body {
+        padding 70px;
+    }
+    .u-header {
+        top: 0 !important;
+    }
+
+    /* ====== 1. ГЕРОЙ-БЛОК: полная ширина, 35% + 65% на десктопе ====== */
+    @media (min-width: 1200px) {
+        /* Отключаем стандартное ограничение ширины для героя */
+        .hero-wide .u-layout-wrap-1 {
+            max-width: none !important;
+            width: 100% !important;
         }
-        .u-header {
-            top: 0 !important;
+        .hero-wide .u-layout-row {
+            display: flex !important;
+            flex-wrap: nowrap !important;
         }
-        /* Первый блок: на широких экранах текст 35%, картинка 15% и заканчивается на середине экрана */
-        @media (min-width: 1200px) {
-            .hero-wide .u-layout-wrap-1 > .u-layout > .u-layout-row {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-            }
-            .hero-wide .u-layout-cell:first-child {
-                width: 35% !important;
-                min-width: 35% !important;
-            }
-            .hero-wide .u-layout-cell:last-child {
-                width: 15% !important;
-                min-width: 15% !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-            }
-            .hero-wide .u-layout-cell:last-child .u-image-1 {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-                min-height: 400px;
-                background-size: contain !important;
-                background-position: center !important;
-                background-repeat: no-repeat !important;
-            }
+        .hero-wide .u-layout-cell:first-child {
+            width: 35% !important;
+            flex: 0 0 35% !important;
+            min-width: 35% !important;
         }
-        /* Запрет увеличения картинки в первом блоке */
-        .hero-wide .u-image {
-            pointer-events: none;
-            cursor: default;
+        .hero-wide .u-layout-cell:last-child {
+            width: 65% !important;
+            flex: 0 0 65% !important;
+            min-width: 65% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        /* Картинка внутри — растягивается на всю ширину своей колонки */
+        .hero-wide .u-image-1 {
+            width: 100% !important;
+            height: auto !important;
+            max-height: 600px !important;
+            background-size: contain !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+    }
+
+    /* ====== 2. БЛОК "Как устроен ноготь?" — мобильная адаптация под стандарт NicePage ====== */
+    @media (max-width: 767px) {
+        /* Сбрасываем кастомные ограничения — делаем как у .u-sheet */
+        .nail-center {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+            box-sizing: border-box;
         }
 
-        /* Блок "Как устроен ноготь?" — центрирование и ограничение ширины */
-        .nail-center {
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 20px;
+        /* Колонки — на всю ширину, без отступов */
+        .nail-center .u-layout-col,
+        .nail-center .u-layout-row {
+            width: 100% !important;
         }
-        /* На смартфонах колонки внутри блока "Как устроен ноготь?" становятся шире */
-        @media (max-width: 767px) {
-            .nail-center {
-                max-width: 100% !important;
-                width: 100% !important;
-                padding: 0 15px !important;
-                box-sizing: border-box;
-            }
-            .nail-center .u-layout-row {
-                flex-direction: column !important;
-                width: 100% !important;
-            }
-            .nail-center .u-layout-cell,
-            .nail-center .u-layout-cell-2,
-            .nail-center .u-layout-cell-3 {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                margin-bottom: 20px;
-                box-sizing: border-box;
-            }
-            .nail-center .u-image-1 {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-                min-height: 200px;
-                background-size: cover !important;
-                background-position: center !important;
-            }
-            .nail-center .u-text-3,
-            .nail-center .u-text-5,
-            .nail-center ul {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding-left: 10px !important;
-                padding-right: 10px !important;
-                box-sizing: border-box;
-            }
+        .nail-center .u-layout-cell,
+        .nail-center .u-layout-cell-2,
+        .nail-center .u-layout-cell-3 {
+            width: 100% !important;
+            flex: 0 0 100% !important;
+            margin-bottom: 20px !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
         }
-        /* Увеличиваем ширину колонки "Состав ногтя" на десктопе, чтобы текст не переносился */
-        @media (min-width: 992px) {
-            .nail-center .u-layout-cell-3 {
-                width: 50% !important;
-            }
+
+        /* Картинка — на всю ширину, как в других секциях (см. скрин 2/3) */
+        .nail-center .u-image-1 {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            min-height: 220px !important;
+            background-size: cover !important;
+            background-position: center !important;
         }
-        /* Изображение в блоке "Как устроен ноготь?" — кликабельно */
-        .nail-clickable {
-            cursor: pointer;
-            transition: transform 0.2s ease;
+
+        /* Текстовые блоки — без внутренних отступов, как в .u-sheet */
+        .nail-center .u-container-layout-2,
+        .nail-center .u-container-layout-3 {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
         }
-        .nail-clickable:hover {
-            transform: scale(1.02);
-        }
-        /* Модальное окно для увеличения изображения */
-        .modal-img {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            cursor: pointer;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-img img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-        .modal-img.show {
-            display: flex;
-        }
-        /* Анимации при наведении */
-        .u-btn-1, .u-btn {
-            transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-        }
-        .u-btn-1:hover, .u-btn:hover {
-            transform: translateY(-3px) !important;
-            box-shadow: 0 12px 20px rgba(0,0,0,0.15) !important;
-        }
-        .u-list-item {
-            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-        }
-        .u-list-item:hover {
-            transform: translateY(-5px) !important;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.1) !important;
-        }
-        .u-icon:hover {
-            transform: scale(1.08);
-            transition: transform 0.2s ease;
-        }
-        .poll-item {
-            transition: transform 0.25s ease;
-        }
-        .poll-item:hover {
-            transform: translateX(6px);
-        }
-        /* Анимация появления при скролле */
-        .fade-up, .fade-left, .fade-right, .zoom-in {
-            opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-        .fade-up { transform: translateY(40px); }
-        .fade-left { transform: translateX(-40px); }
-        .fade-right { transform: translateX(40px); }
-        .zoom-in { transform: scale(0.96); }
-        .fade-up.visible, .fade-left.visible, .fade-right.visible, .zoom-in.visible {
-            opacity: 1;
-            transform: translate(0) scale(1);
-        }
-    </style>
+    }
+
+    /* ====== 3. Остальные стили — оставляем как есть (анимации, кликабельность и т.д.) ====== */
+    .hero-image-clickable {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    .hero-image-clickable:hover {
+        transform: scale(1.02);
+    }
+
+    .nail-clickable {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .nail-clickable:hover {
+        transform: scale(1.02);
+    }
+
+    .modal-img {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-img img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+    .modal-img.show {
+        display: flex;
+    }
+
+    .u-btn-1, .u-btn {
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    .u-btn-1:hover, .u-btn:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 12px 20px rgba(0,0,0,0.15) !important;
+    }
+
+    .u-list-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+    .u-list-item:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 12px 25px rgba(0,0,0,0.1) !important;
+    }
+
+    .u-icon:hover {
+        transform: scale(1.08);
+        transition: transform 0.2s ease;
+    }
+
+    .poll-item {
+        transition: transform 0.25s ease;
+    }
+    .poll-item:hover {
+        transform: translateX(6px);
+    }
+
+    .fade-up, .fade-left, .fade-right, .zoom-in {
+        opacity: 0;
+        transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .fade-up { transform: translateY(40px); }
+    .fade-left { transform: translateX(-40px); }
+    .fade-right { transform: translateX(40px); }
+    .zoom-in { transform: scale(0.96); }
+    .fade-up.visible, .fade-left.visible, .fade-right.visible, .zoom-in.visible {
+        opacity: 1;
+        transform: translate(0) scale(1);
+    }
+</style>
     <script type="application/ld+json">{
         "@context": "http://schema.org",
         "@type": "Organization",
