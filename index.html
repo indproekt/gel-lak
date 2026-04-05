@@ -12,82 +12,119 @@
     <meta name="generator" content="Nicepage 8.4.0, nicepage.com">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700">
     <style>
-        /* ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ АДАПТИВНОСТИ И ЗАПРЕТА УВЕЛИЧЕНИЯ */
+        /* ========== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ (НЕ ЛОМАЮТ ОРИГИНАЛ) ========== */
+        /* Запрет увеличения изображений при клике */
         .u-image, .u-image img, .u-image-link {
             pointer-events: none;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
-        /* Первый блок: 50/50 на десктопе */
+        /* Анимации при наведении */
+        .u-btn-1, .u-btn {
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        .u-btn-1:hover, .u-btn:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15) !important;
+        }
+        .u-list-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        .u-list-item:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        }
+        .u-icon:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+        .u-accordion-link:hover {
+            background-color: #f8f8f8 !important;
+            transition: background-color 0.2s ease;
+        }
+        /* Блок "Как устроен ноготь?" — центрирование и ограничение ширины */
+        .nail-center {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Десктоп: первый блок 50/50 */
         @media (min-width: 992px) {
             .hero-50-50 .u-layout-cell:first-child,
             .hero-50-50 .u-layout-cell:last-child {
                 width: 50% !important;
             }
         }
-        /* Блок "Как устроен ноготь?" — компактно, как на ноутбуке */
-        .nail-fix {
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .nail-fix .u-layout-col .u-size-30 {
-            width: 100% !important;
-        }
-        .nail-fix .u-layout-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .nail-fix .u-layout-cell {
-            flex: 1 1 50%;
-            min-width: 250px;
-        }
-        @media (max-width: 767px) {
-            .nail-fix .u-layout-cell {
-                flex: 1 1 100%;
+        /* Улучшенная адаптивность (дополнение к родным стилям Nicepage) */
+        @media (max-width: 991px) {
+            .u-layout-row {
+                flex-direction: column !important;
+            }
+            .u-layout-cell {
+                width: 100% !important;
+            }
+            .u-list .u-repeater {
+                grid-template-columns: repeat(2, 1fr) !important;
             }
         }
-        /* Остальные анимации и стили опроса (из первого сообщения) */
-        .fade-up, .fade-left, .fade-right, .zoom-in {
+        @media (max-width: 767px) {
+            .u-list .u-repeater {
+                grid-template-columns: 1fr !important;
+            }
+            h1 {
+                font-size: 1.8rem !important;
+            }
+            .u-sheet {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+        }
+        @media (max-width: 575px) {
+            .u-sheet {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            .poll-card {
+                padding: 20px !important;
+            }
+        }
+        /* Анимация появления (из предыдущей версии, но можно оставить для красоты) */
+        .fade-up {
             opacity: 0;
+            transform: translateY(30px);
             transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
-        .fade-up { transform: translateY(30px); }
-        .fade-left { transform: translateX(-30px); }
-        .fade-right { transform: translateX(30px); }
-        .zoom-in { transform: scale(0.95); }
-        .fade-up.visible, .fade-left.visible, .fade-right.visible, .zoom-in.visible {
+        .fade-up.visible {
             opacity: 1;
-            transform: translate(0) scale(1);
+            transform: translateY(0);
         }
-        .poll-card {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 40px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            color: #555;
+        .fade-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
-        .poll-header { text-align: center; margin-bottom: 35px; }
-        .poll-header h2 { color: #333; font-size: 24px; margin-bottom: 10px; }
-        @keyframes fill-bar { from { width: 0; } to { width: var(--target-width); } }
-        .poll-item { margin-bottom: 22px; }
-        .label-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
-        .bar-container { background-color: #f0f0f0; height: 10px; border-radius: 10px; overflow: hidden; }
-        .bar-progress { height: 100%; border-radius: 10px; width: 0; }
-        .bar-progress.animated-bar { animation: fill-bar 1.5s cubic-bezier(0.22, 0.97, 0.36, 1) forwards; }
-        .bg-accent { background: linear-gradient(90deg, #FAD0C4 0%, #F8C8DC 100%); }
-        .bg-danger { background: linear-gradient(90deg, #FFB7B2 0%, #E6B0AA 100%); }
-        .bg-gray { background: #D5DBDB; }
-        .conclusion { margin-top: 35px; padding: 20px; background: #FFF9F8; border-radius: 12px; border: 1px dashed #F8C8DC; font-size: 15px; line-height: 1.6; }
-        .conclusion b { color: #D68D9A; }
-        html { scroll-behavior: smooth; }
-        @media (max-width: 991px) { .u-layout-row { flex-direction: column !important; } .u-layout-cell { width: 100% !important; } .u-list .u-repeater { grid-template-columns: repeat(2, 1fr) !important; } }
-        @media (max-width: 767px) { .u-list .u-repeater { grid-template-columns: 1fr !important; } h1 { font-size: 1.8rem !important; } }
-        @media (max-width: 575px) { .u-sheet { padding-left: 15px !important; padding-right: 15px !important; } }
+        .fade-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .fade-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .zoom-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
     </style>
 </head>
 <body data-home-page="Всё-о-гель-лаке.html" data-home-page-title="Всё о гель-лаке" data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-overlap u-overlap-transparent u-xl-mode" data-lang="ru">
@@ -137,7 +174,7 @@
     </div>
 </header>
 
-<!-- Блок 1: 50/50 на десктопе (добавлен класс hero-50-50) -->
+<!-- ПЕРВЫЙ БЛОК: добавлен класс hero-50-50 для 50/50 на десктопе -->
 <section class="u-clearfix u-custom-color-4 u-lightbox u-section-1 fade-up" id="block-2">
     <div class="data-layout-selected u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-layout-custom-sm u-layout-custom-xs u-layout-wrap u-layout-wrap-1 hero-50-50">
         <div class="u-layout">
@@ -183,9 +220,9 @@
     </div>
 </section>
 
-<!-- Блок "Как устроен ноготь?" с классом nail-fix -->
+<!-- Блок "Как устроен ноготь?" с центрированием -->
 <section class="u-clearfix u-custom-color-4 u-valign-bottom-sm u-valign-middle-xl u-section-4 zoom-in" id="block-6">
-    <div class="nail-fix" style="width: 100%; padding: 0 20px;">
+    <div class="nail-center">
         <h1 class="u-align-center u-text u-text-1"><b>Как устроен ноготь?</b></h1>
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-20 u-layout-wrap u-layout-wrap-1">
             <div class="u-layout">
@@ -234,7 +271,7 @@
     </div>
 </section>
 
-<!-- Остальные секции (полностью из оригинала) -->
+<!-- Остальные секции (без изменений, из исходного кода) -->
 <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-white u-section-5 fade-right" id="block-7">
     <div class="u-clearfix u-sheet u-valign-middle-lg u-sheet-1">
         <h2 class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-1"><b>Что происходит в лампе? (Полимеризация)</b></h2>
@@ -386,16 +423,19 @@
 </footer>
 
 <script>
-    // Анимации
+    // Анимация появления при скролле
     const animatedElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');
     function checkVisibility() {
         animatedElements.forEach(el => {
             const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100 && rect.bottom > 0) el.classList.add('visible');
+            if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
+                el.classList.add('visible');
+            }
         });
     }
+    // Анимация баров опроса
     let pollAnimated = false;
-    function animatePoll() {
+    function animatePollBars() {
         if (pollAnimated) return;
         const pollBlock = document.getElementById('pollBlock');
         if (!pollBlock) return;
@@ -411,15 +451,18 @@
             pollAnimated = true;
         }
     }
-    window.addEventListener('scroll', () => { checkVisibility(); animatePoll(); });
-    window.addEventListener('load', () => { checkVisibility(); setTimeout(animatePoll, 300); });
-    // Плавная прокрутка
+    window.addEventListener('scroll', () => { checkVisibility(); animatePollBars(); });
+    window.addEventListener('load', () => { checkVisibility(); setTimeout(animatePollBars, 300); });
+    // Плавная прокрутка для якорей
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
             const target = document.querySelector(targetId);
-            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
     });
 </script>
