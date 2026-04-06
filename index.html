@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="ru"><head>
+<html style="font-size: 16px;" lang="ru">
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta charset="utf-8">
     <meta name="keywords" content="Маникюр без вреда: всё о гель-лаке, ​​Что такое гель-лак?, ​Как устроен ноготь?, ​Что происходит в лампе? (Полимеризация), ​Влияние на ногти">
@@ -116,7 +117,7 @@
                 margin-right: auto;
             }
         }
-        /* Мобильная адаптация: колонки в 100% ширину */
+        /* 🔧 МОБИЛЬНАЯ АДАПТАЦИЯ: КОРРЕКЦИЯ ВСЕХ ЯЧЕЕК В БЛОКЕ "КАК УСТРОЕН НОГОТЬ?" */
         @media (max-width: 767px) {
             .nail-wrapper .u-layout-row {
                 flex-direction: column !important;
@@ -126,11 +127,46 @@
                 margin-bottom: 25px;
                 padding-left: 0 !important;
                 padding-right: 0 !important;
+                min-height: auto !important;
+                height: auto !important;
             }
-            .nail-wrapper .u-layout-cell-3 ul {
-                word-break: break-word;
+
+            /* 🔧 ФИКС ДЛЯ ИЗОБРАЖЕНИЯ НОГТЯ */
+            .nail-wrapper .u-image-1 {
+                min-height: 280px !important;
+                height: auto !important;
+                padding: 10px 0 !important;
+                background-size: contain !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+            }
+
+            /* Центрирование содержимого внутри ячеек */
+            .nail-wrapper .u-container-layout-1,
+            .nail-wrapper .u-container-layout-2,
+            .nail-wrapper .u-container-layout-3 {
+                min-height: auto !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 15px !important;
+            }
+
+            /* Коррекция текста в списках */
+            .nail-wrapper .u-layout-cell-3 ul,
+            .nail-wrapper .u-layout-cell-2 ul {
                 padding-left: 20px;
+                word-break: break-word;
             }
+
+            /* Заголовки внутри ячеек */
+            .nail-wrapper .u-text-2,
+            .nail-wrapper .u-text-4 {
+                font-size: 1.25rem !important;
+                line-height: 1.4 !important;
+                text-align: center !important;
+            }
+
             /* Отступ для текста в первом блоке на мобильных */
             .hero-mobile-padding {
                 padding-top: 20px !important;
@@ -161,7 +197,7 @@
             <div class="u-custom-menu u-nav-container">
                 <ul role="menubar" class="u-nav u-spacing-2 u-unstyled u-nav-1"><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="#block-5">Что такое гель-лак?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="#block-6">Как устроен ноготь?</a>
-</li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="#block-7">Что происходит в лампе?</a>
+</li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u90 u-nav-link-2" href="#block-7">Что происходит в лампе?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="#block-8">Влияние на ногти</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="#block-11">Результаты опроса</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="#block-13">Правила безопасного маникюра</a>
@@ -174,7 +210,7 @@
                 <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
                     <div class="u-inner-container-layout u-sidenav-overflow">
                         <div class="u-menu-close" tabindex="-1" aria-label="Close menu"></div>
-                        <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2" role="menubar"><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="#block-5">Что такое гель-лак?</a>
+                        <ul class="u-align-center u-nav u-unstyled u-nav-2" role="menubar"><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="#block-5">Что такое гель-лак?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="#block-6">Как устроен ноготь?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="#block-7">Что происходит в лампе?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="#block-8">Влияние на ногти</a>
@@ -208,7 +244,7 @@
                 <div class="u-container-style u-layout-cell u-size-23-xl u-size-28-lg u-size-30-md u-size-30-sm u-size-37-xs u-layout-cell-1 hero-mobile-padding">
                     <div class="u-container-layout u-valign-middle-xs u-container-layout-1">
                         <h1 class="u-align-left u-custom-font u-font-raleway u-text u-text-1">Маникюр без вреда: всё о гель-лаке</h1>
-                        <p class="u-align-left u-text u-text-2"> Достоверная информация о влиянии гель-лака на ногти. Результаты опроса 58 человек. Практические рекомендации.</p>
+                        <p class="u-align-left u-text u-text-2"> Достоверная информация о влиянию гель-лака на ногти. Результаты опроса 58 человек. Практические рекомендации.</p>
                         <a href="#block-5" class="u-active-custom-color-1 u-align-left u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-gradient u-hover-custom-color-1 u-none u-radius u-text-active-white u-text-hover-white u-btn-1">НАЧАТЬ ИЗУЧЕНИЕ</a>
                     </div>
                 </div>
