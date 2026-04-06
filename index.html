@@ -25,7 +25,7 @@
     /* Анимации появления при скролле */
     .fade-up, .fade-left, .fade-right, .zoom-in {
         opacity: 0;
-        transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0 transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     .fade-up { transform: translateY(40px); }
     .fade-left { transform: translateX(-40px); }
@@ -109,7 +109,7 @@
         transform: scale(1.02);
     }
 
-    /* Блок "Как устроен ноготь?" — на десктопе центрируем, на мобильных колонки вертикально */
+    /* Блок "Как устроен ноготь?" — на десктопе центрируем */
     @media (min-width: 992px) {
         .nail-wrapper {
             max-width: 1200px;
@@ -118,7 +118,7 @@
         }
     }
 
-    /* 🔧 МОБИЛЬНАЯ АДАПТАЦИЯ: ПРАВИЛА ДЛЯ ЯЧЕЕК В БЛОКЕ "КАК УСТРОЕН НОГОТЬ?", ЧТОБЫ ОНИ БЫЛИ КАК В ДРУГИХ БЛОКАХ */
+    /* 🔧 МОБИЛЬНАЯ АДАПТАЦИЯ: ВСЁ ПО ОДНОЙ ЯЧЕЙКЕ НА СТРОКУ, КАК В ДРУГИХ БЛОКАХ */
     @media (max-width: 767px) {
         .nail-wrapper .u-layout-row {
             flex-direction: column !important;
@@ -131,14 +131,14 @@
             padding-right: 0 !important;
         }
 
-        /* Убираем ограничения высоты у ячеек, чтобы они растягивались по содержимому */
+        /* Убираем фиксированную высоту у ячеек, чтобы они растягивались по содержимому */
         .nail-wrapper .u-layout-cell-1,
         .nail-wrapper .u-layout-cell-2,
         .nail-wrapper .u-layout-cell-3 {
             height: auto !important;
         }
 
-        /* Для изображения: делаем его более читабельным */
+        /* Для изображения: сохраняем стиль (например, border-radius), но делаем его полноширинным */
         .nail-wrapper .u-image-1 {
             min-height: 200px !important;
             background-size: contain !important;
