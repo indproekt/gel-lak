@@ -21,7 +21,7 @@
             top: 0 !important;
         }
 
-        /* Улучшенные анимации появления при скролле */
+        /* Анимации появления при скролле */
         .fade-up, .fade-left, .fade-right, .zoom-in {
             opacity: 0;
             transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -35,9 +35,9 @@
             transform: translate(0) scale(1);
         }
 
-        /* Более плавные hover-эффекты */
+        /* Hover-эффекты */
         .u-btn-1, .u-btn {
-            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease !important;
+            transition: transform 0.25s ease, box-shadow 0.25s ease !important;
         }
         .u-btn-1:hover, .u-btn:hover {
             transform: translateY(-3px) !important;
@@ -109,7 +109,7 @@
             filter: brightness(1.02);
         }
 
-        /* Блок "Как устроен ноготь?" — на десктопе центрируем, на мобильных колонки вертикально */
+        /* Блок "Как устроен ноготь?" — десктоп: центрирование, мобильные: колонки в 100% ширину */
         @media (min-width: 992px) {
             .nail-wrapper {
                 max-width: 1200px;
@@ -117,20 +117,23 @@
                 margin-right: auto;
             }
         }
-        /* Мобильная адаптация: колонки в 100% ширину, отступы, чтобы не вылезало */
+        /* Мобильная адаптация (ширина до 767px) */
         @media (max-width: 767px) {
+            .nail-wrapper {
+                width: 100%;
+                padding: 0 15px;
+            }
             .nail-wrapper .u-layout-row {
                 flex-direction: column !important;
             }
             .nail-wrapper .u-layout-cell {
                 width: 100% !important;
                 margin-bottom: 25px;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
+                padding: 0 !important;
             }
             .nail-wrapper .u-layout-cell-3 ul {
-                word-break: break-word;
                 padding-left: 20px;
+                word-break: break-word;
             }
             /* Отступ для текста в первом блоке на мобильных */
             .hero-mobile-padding {
@@ -156,8 +159,7 @@
             <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
                 <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-radius u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-palette-2-base u-hamburger-link-1" href="#" tabindex="-1" aria-label="Open menu" aria-controls="18aa">
                     <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-                    <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg><span> МЕНЮ</span>
+                    <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></g></svg><span> МЕНЮ</span>
                 </a>
             </div>
             <div class="u-custom-menu u-nav-container">
@@ -251,7 +253,7 @@
     </div>
 </section>
 
-<!-- БЛОК "Как устроен ноготь?" — обёрнут в nail-wrapper для адаптации -->
+<!-- БЛОК "Как устроен ноготь?" с обёрткой nail-wrapper и полной мобильной адаптацией -->
 <section class="u-clearfix u-custom-color-4 u-valign-bottom-sm u-valign-middle-xl u-section-4 zoom-in" id="block-6">
     <div class="nail-wrapper">
         <h1 class="u-align-center u-text u-text-1"><b>Как устроен ноготь?</b>
@@ -546,7 +548,6 @@
     <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <h2 class="u-align-center u-text u-text-default u-text-1">Часто задаваемые вопросы</h2>
         <div class="u-accordion u-spacing-10 u-accordion-1" role="tablist">
-            <!-- Аккордеон (оригинальный) -->
             <div class="u-accordion-item u-accordion-item-1">
                 <a class="active u-accordion-link u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn-round u-button-style u-radius u-text-active-palette-2-base u-text-black u-white u-accordion-link-1" id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="true" role="tab"><span class="u-accordion-link-text"><b>Со скольки лет можно делать гель-лак?</b><br></span><span class="u-accordion-link-icon u-icon u-icon-circle u-palette-2-base u-text-white u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 426.66667 426.66667"><use xlink:href="#svg-347e"></use></svg><svg class="u-svg-content" viewBox="0 0 426.66667 426.66667" id="svg-347e"><path d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0"></path></svg></span></a>
                 <div class="u-accordion-active u-accordion-pane u-align-left u-container-align-left u-container-style u-white u-accordion-pane-1" id="accordion-7c0e" aria-labelledby="link-accordion-7c0e" role="tabpanel">
