@@ -6,76 +6,85 @@
     <meta name="description" content="">
     <title>Всё о гель-лаке</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="index.css" media="screen">
+    <link rel="stylesheet" href="index.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 8.4.0, nicepage.com">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700">
+    <style>
+        /* ========== ДОБАВЛЕННЫЕ АНИМАЦИИ И HOVER-ЭФФЕКТЫ ========== */
+        /* Отступ для sticky-меню */
+        body {
+            padding-top: 70px;
+        }
+        .u-header {
+            top: 0 !important;
+        }
+
+        /* Анимации появления при скролле */
+        .fade-up, .fade-left, .fade-right, .zoom-in {
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .fade-up { transform: translateY(40px); }
+        .fade-left { transform: translateX(-40px); }
+        .fade-right { transform: translateX(40px); }
+        .zoom-in { transform: scale(0.96); }
+        .fade-up.visible, .fade-left.visible, .fade-right.visible, .zoom-in.visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+
+        /* Hover-эффекты */
+        .u-btn-1, .u-btn {
+            transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+        }
+        .u-btn-1:hover, .u-btn:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15) !important;
+        }
+        .u-list-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        .u-list-item:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1) !important;
+        }
+        .u-icon:hover {
+            transform: scale(1.08);
+            transition: transform 0.2s ease;
+        }
+        .poll-item {
+            transition: transform 0.25s ease;
+        }
+        .poll-item:hover {
+            transform: translateX(6px);
+        }
+    </style>
     <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "Гель-лак"
-}</script>
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Гель-лак"
+    }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Всё о гель-лаке">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/">
-
-<style>
-/* 1. ДЛЯ ПЕРВОГО БЛОКА: на экранах шире ноутбука (например, ≥1366px) делаем ячейку с картинкой шире */
-@media (min-width: 1366px) {
-  /* Оригинальные классы: текст .u-size-28-xl, картинка .u-size-32-xl */
-  .section-1 .u-layout-cell-1 {
-    width: 35% !important;  /* текст уже */
-  }
-  .section-1 .u-layout-cell.u-image-1 {
-    width: 65% !important;  /* картинка шире */
-  }
-}
-
-/* 2. ДЛЯ БЛОКА "КАК УСТРОЕН НОГОТЬ?" на мобильных: ячейки на всю ширину, не узкие */
-@media (max-width: 767px) {
-  .section-4 .u-layout-row .u-layout-cell {
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  /* Дополнительно убираем лишние отступы, чтобы блок не сужался */
-  .section-4 .u-layout-wrap-1 .u-layout {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-}
-</style>
-
 </head>
-  <body data-home-page="Всё-о-гель-лаке.html" data-home-page-title="Всё о гель-лаке" data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-overlap u-overlap-transparent u-xl-mode" data-lang="ru"><header class="u-clearfix u-header u-sticky u-sticky-90d2 u-white u-header" id="header"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+<body data-home-page="Всё-о-гель-лаке.html" data-home-page-title="Всё о гель-лаке" data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-overlap u-overlap-transparent u-xl-mode" data-lang="ru">
+
+<header class="u-clearfix u-header u-sticky u-sticky-90d2 u-white u-header" id="header">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1" data-responsive-from="XL" role="navigation" data-position="menu">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
-            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-radius u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-palette-2-base u-hamburger-link-1" href="#" tabindex="-1" aria-label="Open menu" aria-controls="18aa">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+            <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
+                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-radius u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-palette-2-base u-hamburger-link-1" href="#" tabindex="-1" aria-label="Open menu" aria-controls="18aa">
+                    <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+                    <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
 </g></svg><span> МЕНЮ</span>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul role="menubar" class="u-nav u-spacing-2 u-unstyled u-nav-1"><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="./#block-5" data-page-id="654219070" aria-haspopup="true">Что такое гель-лак?</a>
+                </a>
+            </div>
+            <div class="u-custom-menu u-nav-container">
+                <ul role="menubar" class="u-nav u-spacing-2 u-unstyled u-nav-1"><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="./#block-5" data-page-id="654219070" aria-haspopup="true">Что такое гель-лак?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="./#block-6" data-page-id="654219070">Как устроен ноготь?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="./#block-7" data-page-id="654219070">Что происходит в лампе?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="./#block-8" data-page-id="654219070">Влияние на ногти</a>
@@ -85,12 +94,12 @@
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="./#block-15" data-page-id="654219070">Частые вопросы</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-active-grey-5 u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 u-nav-link-2" href="./#block-17" data-page-id="654219070">Источники информации</a>
 </li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse" id="18aa" role="region" aria-label="Menu panel">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close" tabindex="-1" aria-label="Close menu"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2" role="menubar"><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="./#block-5" data-page-id="654219070" aria-haspopup="true">Что такое гель-лак?</a>
+            </div>
+            <div class="u-custom-menu u-nav-container-collapse" id="18aa" role="region" aria-label="Menu panel">
+                <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                    <div class="u-inner-container-layout u-sidenav-overflow">
+                        <div class="u-menu-close" tabindex="-1" aria-label="Close menu"></div>
+                        <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2" role="menubar"><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="./#block-5" data-page-id="654219070" aria-haspopup="true">Что такое гель-лак?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="./#block-6" data-page-id="654219070">Как устроен ноготь?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="./#block-7" data-page-id="654219070">Что происходит в лампе?</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="./#block-8" data-page-id="654219070">Влияние на ногти</a>
@@ -100,11 +109,11 @@
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="./#block-15" data-page-id="654219070">Частые вопросы</a>
 </li><li role="none" class="u-nav-item"><a tabindex="-1" role="menuitem" class="u-button-style u-nav-link" href="./#block-17" data-page-id="654219070">Источники информации</a>
 </li></ul>
-              </div>
+                    </div>
+                </div>
+                <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
             </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-          <style class="menu-style">@media (max-width: 1139px) {
+            <style class="menu-style">@media (max-width: 1139px) {
                     [data-responsive-from="LG"] .u-nav-container {
                         display: none;
                     }
@@ -113,33 +122,38 @@
                     }
                 }</style>
         </nav>
-      </div></header>
-    <section class="u-clearfix u-custom-color-4 u-lightbox u-section-1" id="block-2">
-      <div class="data-layout-selected u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-layout-custom-sm u-layout-custom-xs u-layout-wrap u-layout-wrap-1">
+    </div>
+</header>
+
+<!-- Добавляем классы анимации к основным секциям -->
+<section class="u-clearfix u-custom-color-4 u-section-1 fade-up" id="block-2">
+    <div class="data-layout-selected u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-layout-custom-sm u-layout-custom-xs u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-28-lg u-size-28-xl u-size-30-md u-size-30-sm u-size-37-xs u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
-                <h1 class="u-align-left u-custom-font u-font-raleway u-text u-text-1">Маникюр без вреда: всё о гель-лаке</h1>
-                <p class="u-align-left u-text u-text-2"> Достоверная информация о влиянии гель-лака на ногти. Результаты опроса 58 человек. Практические рекомендации.</p>
-                <a href="" class="u-active-custom-color-1 u-align-left u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-gradient u-hover-custom-color-1 u-none u-radius u-text-active-white u-text-hover-white u-btn-1">НАЧАТЬ ИЗУЧЕНИЕ </a>
-              </div>
+            <div class="u-layout-row">
+                <div class="u-container-style u-layout-cell u-size-23-xl u-size-28-lg u-size-30-md u-size-30-sm u-size-37-xs u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-1">
+                        <h1 class="u-align-left u-custom-font u-font-raleway u-text u-text-1">Маникюр без вреда: всё о гель-лаке</h1>
+                        <p class="u-align-left u-text u-text-2"> Достоверная информация о влиянии гель-лака на ногти. Результаты опроса 58 человек. Практические рекомендации.</p>
+                        <a href="" class="u-active-custom-color-1 u-align-left u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-gradient u-hover-custom-color-1 u-none u-radius u-text-active-white u-text-hover-white u-btn-1">НАЧАТЬ ИЗУЧЕНИЕ </a>
+                    </div>
+                </div>
+                <div class="u-container-align-center u-container-style u-image u-layout-cell u-size-23-xs u-size-30-md u-size-30-sm u-size-32-lg u-size-37-xl u-image-1" data-image-width="802" data-image-height="1280">
+                    <div class="u-container-layout u-valign-bottom u-container-layout-2"></div>
+                </div>
             </div>
-            <div class="u-container-align-center u-container-style u-image u-layout-cell u-size-23-xs u-size-30-md u-size-30-sm u-size-32-lg u-size-32-xl u-image-1" data-image-width="802" data-image-height="1280">
-              <div class="u-container-layout u-valign-bottom u-container-layout-2"></div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-section-2" id="block-5">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+    </div>
+</section>
+
+<section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-section-2 fade-up" id="block-5">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <h1 class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1"><b>Что такое гель-лак?</b>
         </h1>
       </div>
-    </section>
-    <section class="u-clearfix u-section-3" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-sheet-1">
+</section>
+
+<section class="u-clearfix u-section-3 fade-left" id="block-3">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-sheet-1">
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
             <div class="u-layout-row">
@@ -158,11 +172,12 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="u-clearfix u-custom-color-4 u-valign-bottom-sm u-valign-middle-xl u-section-4" id="block-6">
-      <h1 class="u-align-center u-text u-text-1"><b>Как устроен ноготь?</b>
+</section>
+
+<section class="u-clearfix u-custom-color-4 u-valign-bottom-sm u-valign-middle-xl u-section-4 zoom-in" id="block-6">
+    <h1 class="u-align-center u-text u-text-1"><b>Как устроен ноготь?</b>
       </h1>
-      <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-20 u-layout-wrap u-layout-wrap-1">
+      <div class="custom-expanded data-layout-selected u-align-center-xs u-clearfix u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-gutter-20 u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
           <div class="u-layout-col">
             <div class="u-size-30">
@@ -226,9 +241,10 @@
           <h4 class="u-align-center u-text u-text-default u-text-6"> Ногти не дышат под лаком. Питание они получают из матрикса, а не из воздуха</h4>
         </div>
       </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-white u-section-5" src="" id="block-7">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-sheet-1">
+</section>
+
+<section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-white u-section-5 fade-right" src="" id="block-7">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-sheet-1">
         <h2 class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-1"><b>Что происходит в лампе? (Полимеризация)</b>
         </h2>
         <p class="u-align-center u-text u-text-2"> Фотоинициаторы в составе гель-лака поглощают УФ-лучи и запускают реакцию: жидкий лак превращается в твёрдую плёнку.<br>
@@ -252,9 +268,10 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-4 u-section-6" src="" id="block-8">
-      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-sheet-1">
+</section>
+
+<section class="u-align-center u-clearfix u-container-align-center u-custom-color-4 u-section-6 fade-up" src="" id="block-8">
+    <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-sheet-1">
         <h2 class="u-text u-text-1"><b>Влияние на ногти</b>
         </h2>
         <h2 class="u-subtitle u-text u-text-color-var u-text-2"><span style="font-weight: 700;"><b>Сам по себе гель-лак не вреден.</b></span>&nbsp;Он создаёт защитный барьер.<br>
@@ -292,20 +309,18 @@
           </div>
         </div>
       </div>
-      
-      
-      
-      
-    </section>
-    <section class="u-align-left u-clearfix u-container-align-center u-container-align-left u-section-7" id="block-11">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+</section>
+
+<section class="u-align-left u-clearfix u-container-align-center u-container-align-left u-section-7 fade-left" id="block-11">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
         <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500"><b>Результаты опроса</b>
         </h2>
         <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500"> Исследование проходило в феврале-марте 2026 года на базе МОУ «Миасская СОШ №1». В опросе приняли участие 58 человек: ученицы 8–11 классов (45 человек) и учителя (13 человек) в возрасте от 14 до 50 лет</p>
       </div>
-    </section>
-    <section class="u-clearfix u-section-8" id="block-1">
-      <div class="u-clearfix u-sheet u-sheet-1">
+</section>
+
+<section class="u-clearfix u-section-8 fade-up" id="block-1">
+    <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
           <style> /* Основной контейнер */
     .poll-card {
@@ -437,9 +452,10 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-4 u-section-9" id="block-13">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1">
+</section>
+
+<section class="u-align-center u-clearfix u-container-align-center u-custom-color-4 u-section-9 zoom-in" id="block-13">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1">
         <h2 class="u-align-center u-text u-text-1"><b>Правила безопасного маникюра</b>
         </h2>
         <div class="u-expanded-width u-list u-list-1">
@@ -490,9 +506,10 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-section-10" id="block-14">
-      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+</section>
+
+<section class="u-align-center u-clearfix u-container-align-center u-section-10 fade-right" id="block-14">
+    <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
         <h3 class="u-align-center u-custom-font u-font-montserrat u-text u-text-1"><b>Когда нельзя делать гель-лак?</b>
         </h3>
         <div class="u-expanded-width u-list u-list-1">
@@ -530,9 +547,10 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="u-clearfix u-container-align-center u-custom-color-4 u-section-11" id="block-15">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+</section>
+
+<section class="u-clearfix u-container-align-center u-custom-color-4 u-section-11 fade-up" id="block-15">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <h2 class="u-align-center u-text u-text-default u-text-1">Часто задаваемые вопросы</h2>
         <div class="u-accordion u-spacing-10 u-accordion-1" role="tablist">
           <div class="u-accordion-item u-accordion-item-1">
@@ -583,9 +601,10 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="u-clearfix u-grey-5 u-section-12" id="block-17">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+</section>
+
+<section class="u-clearfix u-grey-5 u-section-12 fade-left" id="block-17">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h3 class="u-text u-text-1"><b>Источники информации</b>
         </h3>
         <ol class="u-text u-text-2">
@@ -616,15 +635,44 @@
           </li>
         </ol>
       </div>
-    </section>
-    <style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {
+</section>
+
+<style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {
 background-color: #ffffff !important
 }</style>
-    
-    
-    
-    <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="footer"><div class="u-clearfix u-sheet u-sheet-1">
+
+<footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="footer"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1"> Сайт выполнен в рамках школьного проекта</p>
       </div></footer>
-  
-</body></html>
+
+<!-- Убираем лишний бэклинк, если он был -->
+<script>
+    // Анимация появления при скролле
+    const animatedElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');
+    function checkVisibility() {
+        animatedElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80 && rect.bottom > 0) {
+                el.classList.add('visible');
+            }
+        });
+    }
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('load', checkVisibility);
+    setTimeout(checkVisibility, 300);
+
+    // Плавная прокрутка для якорей (добавляем, если ссылки ведут на id)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
